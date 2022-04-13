@@ -140,6 +140,7 @@ https://templatemo.com/tm-560-astro-motion
                   <h2 class="mb-4">5 przykładowych kryptowalut</h2>
                   <p class="mb-4"> <strong>Enjin Coin (ENJ)</strong> - projekt ten umożliwia firmom z branży gier integrację z technologią blockchain. Za pomocą infrastruktury Enjin mogą one tworzyć cyfrowe przedmioty, a następnie umieszczać je w swoich wirtualnych światach – w ten sposób zyskując, chociażby przewagę konkurencyjną.</p>
 					<p class="mb-4"> <strong>Cosmos (ATOM)</strong> - został on wyemitowany na blockchainie Ethereum. Jego główna rola związana jest ze stakowaniem. najprościej mówiąc, użytkownicy zwani walidatorami przechowują swoje tokeny w portfelu kryptowalutowym po to, aby zabezpieczyć sieć. Za zablokowanie swoich monet otrzymują nagrody.</p>
+					 <p class="mb-4"> <strong>Unibright (UBT)</strong> - Unibright zapewnia swoim klientom zestaw gotowych narzędzi, zwiększając produktywność oraz wydajność organizacji. Ich podaż jest ograniczona, co więcej zwiększony popyt prowadzi do jej spadku. Wszystko dlatego, że klienci Unibright po zdeponowaniu tokenów na tej platformie nie mogą ich ponownie wypłacić.</p>
                 </div>
                 <div class="circle intro-circle-1"></div>
                 <div class="circle intro-circle-2"></div>
@@ -157,12 +158,60 @@ https://templatemo.com/tm-560-astro-motion
               <div class="circle intro-circle-3"></div>
               <div class="circle intro-circle-4"></div>
               <div class="tm-bg-dark content-pad">
-                <p class="mb-4"> <strong>Unibright (UBT)</strong> - Unibright zapewnia swoim klientom zestaw gotowych narzędzi, zwiększając produktywność oraz wydajność organizacji. Ich podaż jest ograniczona, co więcej zwiększony popyt prowadzi do jej spadku. Wszystko dlatego, że klienci Unibright po zdeponowaniu tokenów na tej platformie nie mogą ich ponownie wypłacić.</p>
+               
 					<p class="mb-4"> <strong>JesusCoin (JC)</strong> - "Decentralizujemy Jezusa" - tak reklamuje się JesusCoin. Na oficjalnej stronie projektu wyjaśniono, że jest to "waluta syna bożego". "Jesus Coin ma unikalną przewagę dostarczania globalnego dostępu do Jezusa, bezpieczniejszego i szybszego niż kiedykolwiek wcześniej". </p>
 					<p class="mb-4"> <strong>Useless Ethereum Token</strong> - "Dasz swoje pieniądze przypadkowej osobie z internetu, ona je zabierze i coś sobie za to kupi. Prawdopodobnie elektronikę, jeśli mamy być szczerzy. Może nawet duży telewizor. Poważnie, nie kupujcie tych tokenów." Oczywiście, ludzie i tak kupili UET. Niedługo po premierze kosztowała nawet 40 dolarów, dziś jej cena to 0,02 dol.</p>
+							  <form id="licz"><h4 style="font-family:verdana"><strong>Przelicznik</strong></h4>
+						<ul class="meta"> <li class="icon fa-clock">11:30 13.04.2022</li></ul>
+                                <label>ILOŚĆ <input type="number" id="krypto"> </label><br>
+                                <label>WALUTA
+                                <select id="waluta">
+                                    <option value="ENJ">ENJ</option>
+                                    <option value="ATOM">ATOM</option>
+                                    <option value= "UBT">UBT</option>
+                                    <option value= "JC">JC</option>
+                                    <option value= "UET">UET</option>
+                                    </select></label><br>
+                                <label>USD<br><div id="naUSD"><span id="USD"></span></div></label><br>
+ 
+ 
+                                <button type="button" id="guzik">PRZELICZ</button>
+                                </form>
+ 
+                            <script>
+                                var guzik = document.getElementById("guzik");
+                                var przelicz = function() {
+                                    var USD = document.getElementById("USD");
+                                    var krypto =document.getElementById("krypto").value;
+                                    var waluta = document.getElementById("waluta").value;
+                                    if (waluta==="ENJ")
+                                        {
+                                            USD.innerHTML = krypto*1.56;
+                                        }
+                                    else if (waluta==="ATOM")
+                                        {
+                                            USD.innerHTML = krypto*24.620;
+                                        }
+                                     else if (waluta==="UBT")
+                                        {
+                                            USD.innerHTML = krypto*0.851;
+                                        }
+                                     else if (waluta==="JC")
+                                        {
+                                            USD.innerHTML = krypto*0.000247;
+                                        }
+                                     else if (waluta==="UET")
+                                        {
+                                            USD.innerHTML = krypto*0;
+                                        }
+                                };
+                                guzik.addEventListener('click', przelicz);
+ 
+                            </script>
               </div>              
             </div>
           </li>
+
 
         </ul>
     </div>
@@ -189,3 +238,4 @@ https://templatemo.com/tm-560-astro-motion
   <script src="js/templatemo-script.js"></script>
 </body>
 </html>
+
